@@ -62,7 +62,7 @@ const Header = () => {
             <li><a href="/articles">Articles</a></li>
             <li><a href="#grammar" onClick={handleGrammarLinkClick}>Grammar</a></li>
             <li><a href="/quizzes">Quizzes</a></li>
-            <li><a href="/books">Books</a></li>
+            <li><a href="/books">Famous Books</a></li>
           </ul>
         </nav>
       </div>
