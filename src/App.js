@@ -45,9 +45,7 @@ const Header = () => {
         <nav>
           <ul className="menu">
             <li>
-              <a href="/levels" onClick={toggleLevelsMenu}>
-                Levels
-              </a>
+            
               {showLevelsMenu && (
                 <ul className="sub-menu">
                   <li><a href="/level/A1-A2">A1-A2</a></li>
@@ -57,12 +55,16 @@ const Header = () => {
                   <li><a href="/level/C1-C1">C1-C1</a></li>
                 </ul>
               )}
+              
             </li>
             <li><a href="/courses">Courses</a></li>
             <li><a href="/articles">Articles</a></li>
             <li><a href="#grammar" onClick={handleGrammarLinkClick}>Grammar</a></li>
             <li><a href="/quizzes">Quizzes</a></li>
             <li><a href="/books">Famous Books</a></li>
+            <li> <a href="/grammar" onClick={toggleLevelsMenu}>
+                Exercises 
+              </a></li>
           </ul>
         </nav>
       </div>

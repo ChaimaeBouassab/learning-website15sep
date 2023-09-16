@@ -24,7 +24,20 @@ const GrammarSection = () => {
       <h2>Grammar Lessons</h2>
       <div className="lesson">
         <h3>Lesson 1: Introduction to Verbs</h3>
+        <button
+  onClick={() => window.open("public/scribd.vpdfs.com_introduction-to-verbs.pdf", "_blank")}
+  style={{
+    backgroundColor: "blue",
+    color: "white",
+    padding: "10px 20px",
+    border: "none",
+    cursor: "pointer",
+  }}
+>
+  Download PDF
+</button>
         <p>In grammar, a verb is...</p>
+        
         {/* Add more lesson content as needed */}
       </div>
 
