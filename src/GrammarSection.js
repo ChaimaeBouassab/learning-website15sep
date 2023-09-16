@@ -27,18 +27,18 @@ const GrammarSection = () => {
         <button
   onClick={() => window.open("public/scribd.vpdfs.com_introduction-to-verbs.pdf", "_blank")}
   style={{
-    backgroundColor: "blue",
+    backgroundColor: "green",
     color: "white",
     padding: "10px 20px",
     border: "none",
     cursor: "pointer",
   }}
+
 >
   Download PDF
 </button>
-        <p>In grammar, a verb is...</p>
-        
-        {/* Add more lesson content as needed */}
+      <img src="/dfhgj.jpeg" alt="" />
+
       </div>
 
       <h2>Grammar Quizzes</h2>
@@ -72,7 +72,12 @@ const GrammarSection = () => {
             </p>
           )}
         </div>
+
       ))}
+      <h3>Lesson 2: Should Have + Past Participle </h3>
+      <img src="/modals.jpeg" alt="" />
+      <p>Votre contenu de leçon ici...</p>
+
     </div>
   );
 };

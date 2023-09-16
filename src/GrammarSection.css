@@ -34,4 +34,8 @@
     font-weight: bold;
     margin-top: 10px;
   }
-  
+  /* styles.css */
+.lesson-img {
+  width: 100px; /* Desired width */
+  height: 100px; /* Desired height */
+}
