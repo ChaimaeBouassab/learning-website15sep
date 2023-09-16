@@ -25,7 +25,7 @@ const GrammarSection = () => {
       <div className="lesson">
         <h3>Lesson 1: Introduction to Verbs</h3>
         <button
-  onClick={() => window.open("public/scribd.vpdfs.com_introduction-to-verbs.pdf", "_blank")}
+  onClick={() => window.open("/scribd.vpdfs.com_introduction-to-verbs.pdf", "_blank")}
   style={{
     backgroundColor: "green",
     color: "white",
@@ -76,6 +76,7 @@ const GrammarSection = () => {
       ))}
       <h3>Lesson 2: Should Have + Past Participle </h3>
       <img src="/modals.jpeg" alt="" />
+      
       <p>Votre contenu de leçon ici...</p>
 
     </div>
