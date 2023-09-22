@@ -1,12 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css'; // Import the CSS file
+import ReactDOM from 'react-dom';
+import YourComponent from './YourComponent'; // Adjust the path to match your file structure
 import GrammarSection from './GrammarSection'; // Import the GrammarSection component
+const articles = [
+  {
+    title: 'Article 1',
+    link: 'https://stevepavlina.com/blog/2005/12/spirituality-vs-intelligence/',
+  },
+  {
+    title: 'Article 2',
+    link: 'https://stevepavlina.com/blog/2004/10/the-courage-to-live-consciously/',
+  },
+  // Add more articles as needed
+];
+
+ReactDOM.render(<YourComponent articles={articles} />, document.getElementById('root'));
+
 const Header = () => {
   const [logoWidth, setLogoWidth] = useState(0);
   const [showPdfButton, setShowPdfButton] = useState(false);
 
   const [showLevelsMenu, setShowLevelsMenu] = useState(false); // Add state for levels menu
 
+  function handleArticleLinkClick(event, link) {
+    event.preventDefault();
+    window.location.href = link;
+  }
+  
   useEffect(() => {
     const handleResize = () => {
       const maxWidth = window.innerWidth * 0.9; // 90% of the window's width
@@ -68,6 +89,18 @@ const Header = () => {
             <li><a href="/Vocabulary">Vocabulary</a></li>
 
             <li><a href="/books">Famous Books</a></li>
+            <div>
+      <h1>Articles</h1>
+      <ul>
+        {articles.map((article, index) => (
+          <li key={index}>
+            <a href="#" onClick={(e) => handleArticleLinkClick(e, article.link)}>
+              {article.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
             <li> <a href="/grammar" onClick={toggleLevelsMenu}>
                 Exercises 
               </a></li>
@@ -125,15 +158,35 @@ const Header = () => {
 </button>   
 <h1>𝗚𝗶𝘃𝗲 𝗮𝗻𝗱 𝗧𝗮𝗸𝗲: 𝗪𝗵𝘆 𝗛𝗲𝗹𝗽𝗶𝗻𝗴 𝗢𝘁𝗵𝗲𝗿𝘀 𝗗𝗿𝗶𝘃𝗲𝘀 𝗢𝘂𝗿 𝗦𝘂𝗰𝗰𝗲𝘀𝘀</h1>
      <p>𝙎𝙩𝙖𝙧𝙩 𝙒𝙝𝙚𝙧𝙚 𝙔𝙤𝙪 𝘼𝙧𝙚 𝙞𝙨 𝙖𝙣 𝙞𝙣𝙙𝙞𝙨𝙥𝙚𝙣𝙨𝙖𝙗𝙡𝙚 𝙝𝙖𝙣𝙙𝙗𝙤𝙤𝙠 𝙛𝙤𝙧 𝙘𝙪𝙡𝙩𝙞𝙫𝙖𝙩𝙞𝙣𝙜 𝙛𝙚𝙖𝙧𝙡𝙚𝙨𝙨𝙣𝙚𝙨𝙨 𝙖𝙣𝙙 𝙖𝙬𝙖𝙠𝙚𝙣𝙞𝙣𝙜 𝙖 𝙘𝙤𝙢𝙥𝙖𝙨𝙨𝙞𝙤𝙣𝙖𝙩𝙚 𝙝𝙚𝙖𝙧𝙩. 𝙒𝙞𝙩𝙝 𝙞𝙣𝙨𝙞𝙜𝙝𝙩 𝙖𝙣𝙙 𝙝𝙪𝙢𝙤𝙧, 𝙋𝙚𝙢𝙖 𝘾𝙝𝙤̈𝙙𝙧𝙤̈𝙣 𝙥𝙧𝙚𝙨𝙚𝙣𝙩𝙨 𝙙𝙤𝙬𝙣-𝙩𝙤-𝙚𝙖𝙧𝙩𝙝 𝙜𝙪𝙞𝙙𝙖𝙣𝙘𝙚 𝙤𝙣 𝙝𝙤𝙬 𝙬𝙚 𝙘𝙖𝙣 "𝙨𝙩𝙖𝙧𝙩 𝙬𝙝𝙚𝙧𝙚 𝙬𝙚 𝙖𝙧𝙚"—𝙚𝙢𝙗𝙧𝙖𝙘𝙞𝙣𝙜 𝙧𝙖𝙩𝙝𝙚𝙧 𝙩𝙝𝙖𝙣 𝙙𝙚𝙣𝙮𝙞𝙣𝙜 𝙩𝙝𝙚 𝙥𝙖𝙞𝙣𝙛𝙪𝙡 𝙖𝙨𝙥𝙚𝙘𝙩𝙨 𝙤𝙛 𝙤𝙪𝙧 𝙡𝙞𝙫𝙚𝙨. 𝙋𝙚𝙢𝙖 𝘾𝙝𝙤̈𝙙𝙧𝙤̈𝙣 𝙛𝙧𝙖𝙢𝙚𝙨 𝙝𝙚𝙧 𝙩𝙚𝙖𝙘𝙝𝙞𝙣𝙜𝙨 𝙤𝙣 𝙘𝙤𝙢𝙥𝙖𝙨𝙨𝙞𝙤𝙣 𝙖𝙧𝙤𝙪𝙣𝙙 𝙛𝙞𝙛𝙩𝙮-𝙣𝙞𝙣𝙚 𝙩𝙧𝙖𝙙𝙞𝙩𝙞𝙤𝙣𝙖𝙡 𝙏𝙞𝙗𝙚𝙩𝙖𝙣 𝘽𝙪𝙙𝙙𝙝𝙞𝙨𝙩 𝙢𝙖𝙭𝙞𝙢𝙨, 𝙤𝙧 𝙨𝙡𝙤𝙜𝙖𝙣𝙨, 𝙨𝙪𝙘𝙝 𝙖𝙨: "𝘼𝙡𝙬𝙖𝙮𝙨 𝙖𝙥𝙥𝙡𝙮 𝙤𝙣𝙡𝙮 𝙖 𝙟𝙤𝙮𝙛𝙪𝙡 𝙨𝙩𝙖𝙩𝙚 𝙤𝙛 𝙢𝙞𝙣𝙙," "𝘿𝙤𝙣'𝙩 𝙨𝙚𝙚𝙠 𝙤𝙩𝙝𝙚𝙧𝙨' 𝙥𝙖𝙞𝙣 𝙖𝙨 𝙩𝙝𝙚 𝙡𝙞𝙢𝙗𝙨 𝙤𝙛 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙝𝙖𝙥𝙥𝙞𝙣𝙚𝙨𝙨," 𝙖𝙣𝙙 "𝘼𝙡𝙬𝙖𝙮𝙨 𝙢𝙚𝙙𝙞𝙩𝙖𝙩𝙚 𝙤𝙣 𝙬𝙝𝙖𝙩𝙚𝙫𝙚𝙧 𝙥𝙧𝙤𝙫𝙤𝙠𝙚𝙨 𝙧𝙚𝙨𝙚𝙣𝙩𝙢𝙚𝙣𝙩."
-
 𝙒𝙤𝙧𝙠𝙞𝙣𝙜 𝙬𝙞𝙩𝙝 𝙩𝙝𝙚𝙨𝙚 𝙨𝙡𝙤𝙜𝙖𝙣𝙨 𝙖𝙣𝙙 𝙩𝙝𝙧𝙤𝙪𝙜𝙝 𝙩𝙝𝙚 𝙥𝙧𝙖𝙘𝙩𝙞𝙘𝙚 𝙤𝙛 𝙢𝙚𝙙𝙞𝙩𝙖𝙩𝙞𝙤𝙣, 𝙎𝙩𝙖𝙧𝙩 𝙒𝙝𝙚𝙧𝙚 𝙔𝙤𝙪 𝘼𝙧𝙚 𝙨𝙝𝙤𝙬𝙨 𝙝𝙤𝙬 𝙬𝙚 𝙘𝙖𝙣 𝙖𝙡𝙡 𝙙𝙚𝙫𝙚𝙡𝙤𝙥 𝙩𝙝𝙚 𝙘𝙤𝙪𝙧𝙖𝙜𝙚 𝙩𝙤 𝙬𝙤𝙧𝙠 𝙬𝙞𝙩𝙝 𝙤𝙪𝙧 𝙞𝙣𝙣𝙚𝙧 𝙥𝙖𝙞𝙣 𝙖𝙣𝙙 𝙙𝙞𝙨𝙘𝙤𝙫𝙚𝙧 𝙟𝙤𝙮, 𝙬𝙚𝙡𝙡-𝙗𝙚𝙞𝙣𝙜, 𝙖𝙣𝙙 𝙘𝙤𝙣𝙛𝙞𝙙𝙚𝙣𝙘𝙚.</p>
+      </li>
+      <li>
+      <button
+  onClick={() => window.open("/the-unplugged-alpha.pdf", "_blank")}
+  style={{
+    backgroundColor: "green",
+    color: "white",
+    padding: "10px 20px",
+    border: "none",
+    cursor: "pointer",
+  }}
+
+>
+  Download PDF
+</button>   
+<h1>The unplugged Alpha</h1>
+     <p>❝𝐌𝐨𝐬𝐭 𝐦𝐞𝐧 𝐭𝐨𝐝𝐚𝐲 𝐚𝐫𝐞 𝐬𝐞𝐧𝐭 𝐨𝐟𝐟 𝐢𝐧𝐭𝐨 𝐬𝐨𝐜𝐢𝐞𝐭𝐲 𝐰𝐢𝐭𝐡 𝐚 𝐛𝐫𝐨𝐤𝐞𝐧 𝐛𝐞𝐥𝐢𝐞𝐟 𝐬𝐲𝐬𝐭𝐞𝐦, 𝐰𝐡𝐢𝐜𝐡 𝐭𝐡𝐞𝐲 𝐮𝐬𝐞 𝐭𝐨 𝐦𝐚𝐤𝐞 𝐜𝐡𝐨𝐢𝐜𝐞𝐬, 𝐭𝐡𝐚𝐭 𝐠𝐞𝐭 𝐭𝐡𝐞𝐦 𝐭𝐞𝐫𝐫𝐢𝐛𝐥𝐞 𝐫𝐞𝐬𝐮𝐥𝐭𝐬 𝐰𝐢𝐭𝐡 𝐥𝐢𝐟𝐞 𝐚𝐧𝐝 𝐰𝐨𝐦𝐞𝐧. 𝐌𝐞𝐧 𝐡𝐚𝐯𝐞 𝐛𝐞𝐞𝐧 𝐜𝐨𝐧𝐝𝐢𝐭𝐢𝐨𝐧𝐞𝐝 𝐭𝐨 𝐛𝐞 𝐭𝐡𝐞 𝐪𝐮𝐢𝐧𝐭𝐞𝐬𝐬𝐞𝐧𝐭𝐢𝐚𝐥 "𝐧𝐢𝐜𝐞 𝐠𝐮𝐲." 𝐓𝐡𝐞𝐲'𝐫𝐞 𝐭𝐫𝐚𝐢𝐧𝐞𝐝 𝐭𝐨 𝐛𝐞 𝐨𝐯𝐞𝐫𝐥𝐲 𝐡𝐮𝐦𝐛𝐥𝐞, 𝐤𝐢𝐧𝐝 𝐭𝐨 𝐚 𝐟𝐚𝐮𝐥𝐭, 𝐚𝐧𝐝 𝐭𝐡𝐚𝐭 𝐣𝐮𝐬𝐭 "𝐛𝐞𝐢𝐧𝐠 𝐭𝐡𝐞𝐦𝐬𝐞𝐥𝐯𝐞𝐬" 𝐢𝐬 𝐞𝐧𝐨𝐮𝐠𝐡 𝐭𝐨 𝐚𝐭𝐭𝐫𝐚𝐜𝐭 𝐚𝐧𝐝 𝐤𝐞𝐞𝐩 𝐭𝐡𝐞 𝐰𝐨𝐦𝐚𝐧 𝐨𝐟 𝐭𝐡𝐞𝐢𝐫 𝐝𝐫𝐞𝐚𝐦𝐬. 𝐌𝐞𝐧 𝐚𝐫𝐞 𝐭𝐨𝐥𝐝 𝐭𝐨 𝐛𝐞𝐥𝐢𝐞𝐯𝐞 𝐭𝐡𝐚𝐭 𝐜𝐨𝐧𝐯𝐞𝐧𝐭𝐢𝐨𝐧𝐚𝐥 𝐦𝐚𝐬𝐜𝐮𝐥𝐢𝐧𝐢𝐭𝐲 𝐢𝐬 𝐭𝐨𝐱𝐢𝐜, 𝐚𝐧𝐝 𝐭𝐨 𝐩𝐮𝐭 𝐰𝐨𝐦𝐞𝐧 𝐚𝐡𝐞𝐚𝐝 𝐨𝐟 𝐭𝐡𝐞𝐢𝐫 𝐨𝐰𝐧 𝐢𝐧𝐭𝐞𝐫𝐞𝐬𝐭𝐬, 𝐩𝐚𝐬𝐬𝐢𝐨𝐧𝐬, 𝐚𝐧𝐝 𝐩𝐮𝐫𝐩𝐨𝐬𝐞. 𝐓𝐡𝐢𝐬 𝐡𝐚𝐬 𝐥𝐞𝐝 𝐭𝐨 𝐚𝐧 𝐞𝐧𝐭𝐢𝐫𝐞 𝐠𝐞𝐧𝐞𝐫𝐚𝐭𝐢𝐨𝐧 𝐨𝐟 𝐦𝐞𝐧 𝐟𝐨𝐫𝐦𝐢𝐧𝐠 𝐯𝐞𝐫𝐲 𝐮𝐧𝐡𝐞𝐚𝐥𝐭𝐡𝐲 𝐚𝐭𝐭𝐚𝐜𝐡𝐦𝐞𝐧𝐭𝐬 𝐭𝐨 𝐰𝐨𝐦𝐞𝐧 𝐭𝐡𝐚𝐭 𝐭𝐡𝐞𝐲, 𝐮𝐧𝐟𝐨𝐫𝐭𝐮𝐧𝐚𝐭𝐞𝐥𝐲, 𝐨𝐟𝐭𝐞𝐧 𝐦𝐚𝐤𝐞 𝐭𝐡𝐞𝐢𝐫 𝐬𝐨𝐥𝐞 𝐟𝐨𝐜𝐮𝐬 𝐨𝐟 𝐭𝐡𝐞𝐢𝐫 𝐥𝐢𝐯𝐞𝐬. 𝐓𝐡𝐞 𝐩𝐥𝐚𝐲𝐛𝐨𝐨𝐤 𝐭𝐨 𝐰𝐨𝐦𝐞𝐧 𝐚𝐧𝐝 𝐥𝐢𝐟𝐞 𝐡𝐚𝐬 𝐜𝐡𝐚𝐧𝐠𝐞𝐝, 𝐛𝐮𝐭 𝐦𝐨𝐬𝐭 𝐦𝐞𝐧 𝐦𝐢𝐬𝐬𝐞𝐝 𝐭𝐡𝐞 𝐦𝐞𝐦𝐨. 𝐃𝐨 𝐲𝐨𝐮 𝐰𝐚𝐧𝐭 𝐭𝐨 𝐬𝐮𝐜𝐜𝐞𝐞𝐝, 𝐚𝐧𝐝 𝐥𝐞𝐯𝐞𝐥 𝐮𝐩 𝐢𝐧 𝐞𝐯𝐞𝐫𝐲 𝐚𝐫𝐞𝐚 𝐨𝐟 𝐲𝐨𝐮𝐫 𝐥𝐢𝐟𝐞? 𝐈𝐟 𝐬𝐨, 𝐭𝐡𝐞𝐧 𝐭𝐡𝐢𝐬 𝐛𝐨𝐨𝐤 𝐞𝐱𝐩𝐥𝐚𝐢𝐧𝐬 𝐭𝐨 𝐦𝐞𝐧: - 𝐓𝐡𝐞 𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐜𝐞 𝐨𝐟 𝐦𝐚𝐱𝐢𝐦𝐢𝐳𝐢𝐧𝐠 𝐲𝐨𝐮𝐫 𝐥𝐨𝐨𝐤𝐬, 𝐦𝐨𝐧𝐞𝐲, 𝐬𝐨𝐜𝐢𝐚𝐥 𝐬𝐭𝐚𝐭𝐮𝐬, 𝐚𝐧𝐝 𝐠𝐚𝐦𝐞.- 𝐖𝐡𝐲 𝐢𝐭'𝐬 𝐞𝐬𝐬𝐞𝐧𝐭𝐢𝐚𝐥 𝐭𝐨 𝐠𝐞𝐭 𝐠𝐞𝐧𝐮𝐢𝐧𝐞 𝐛𝐮𝐫𝐧𝐢𝐧𝐠 𝐝𝐞𝐬𝐢𝐫𝐞 𝐟𝐫𝐨𝐦 𝐚 𝐰𝐨𝐦𝐚𝐧 𝐰𝐡𝐨 𝐰𝐚𝐧𝐭𝐬 𝐭𝐨 𝐝𝐚𝐭𝐞 𝐲𝐨𝐮.- 𝐓𝐡𝐞 𝐭𝐨𝐩 𝟐𝟎 𝐫𝐞𝐝 𝐟𝐥𝐚𝐠𝐬 𝐭𝐡𝐚𝐭 𝐲𝐨𝐮 𝐦𝐮𝐬𝐭 𝐯𝐞𝐭 𝐰𝐨𝐦𝐞𝐧 𝐟𝐨𝐫 𝐚 𝐥𝐨𝐧𝐠 𝐭𝐞𝐫𝐦 𝐫𝐞𝐥𝐚𝐭𝐢𝐨𝐧𝐬𝐡𝐢𝐩.- 𝐇𝐨𝐰 𝐭𝐨 𝐛𝐞𝐜𝐨𝐦𝐞 𝐨𝐧𝐞 𝐨𝐟 𝐭𝐡𝐞 𝐭𝐨𝐩 𝟐𝟎% 𝐨𝐟 𝐦𝐞𝐧 𝐭𝐡𝐚𝐭 𝐰𝐨𝐦𝐞𝐧 𝐬𝐰𝐢𝐩𝐞 𝐫𝐢𝐠𝐡𝐭 𝐟𝐨𝐫 𝐨𝐧 𝐨𝐧𝐥𝐢𝐧𝐞 𝐝𝐚𝐭𝐢𝐧𝐠. - 𝐖𝐡𝐲 𝐬𝐦𝐚𝐫𝐭 𝐦𝐞𝐧 𝐚𝐯𝐨𝐢𝐝 𝐦𝐚𝐫𝐫𝐢𝐚𝐠𝐞. 𝐀𝐧𝐝 𝐦𝐮𝐜𝐡 𝐦𝐨𝐫𝐞. 𝐓𝐡𝐢𝐬 𝐛𝐨𝐨𝐤 𝐞𝐱𝐩𝐨𝐬𝐞𝐬 𝐭𝐡𝐞 𝐜𝐨𝐦𝐟𝐨𝐫𝐭𝐢𝐧𝐠 𝐥𝐢𝐞𝐬 𝐲𝐨𝐮'𝐯𝐞 𝐛𝐞𝐞𝐧 𝐭𝐨𝐥𝐝 𝐭𝐡𝐫𝐨𝐮𝐠𝐡𝐨𝐮𝐭 𝐲𝐨𝐮𝐫 𝐥𝐢𝐟𝐞 𝐟𝐨𝐫 𝐰𝐡𝐚𝐭 𝐭𝐡𝐞𝐲 𝐫𝐞𝐚𝐥𝐥𝐲 𝐚𝐫𝐞. 𝐄𝐧𝐚𝐛𝐥𝐢𝐧𝐠 𝐲𝐨𝐮 𝐭𝐨 𝐛𝐞𝐜𝐨𝐦𝐞 𝐚 𝐭𝐫𝐮𝐥𝐲 𝐚𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐜 𝐀𝐥𝐩𝐡𝐚 𝐭𝐡𝐚𝐭 𝐜𝐡𝐚𝐬𝐞𝐬 𝐞𝐱𝐜𝐞𝐥𝐥𝐞𝐧𝐜𝐞, 𝐚𝐧𝐝 𝐥𝐞𝐚𝐝𝐬 𝐚 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥 𝐩𝐚𝐬𝐬𝐢𝐨𝐧-𝐟𝐢𝐥𝐥𝐞𝐝 𝐥𝐢𝐟𝐞.❞</p>
       </li>
       {/* Add more book entries as needed */}
     </ul>        
       </div>
       
     </div>
-  );
+    
+    
+ 
+    );
+
 };
 
 export default Header;
