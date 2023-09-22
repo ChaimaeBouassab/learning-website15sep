@@ -77,7 +77,7 @@ const Header = () => {
                   <br></br>
                   <li><a href="/level/B1-B2">B1-B2</a></li>
                   <br></br>
-                  <li><a href="/level/C1-C1">C1-C1</a></li>
+                  <li><a href="/level/C1-C1">C1-C2</a></li>
                 </ul>
               )}
               
