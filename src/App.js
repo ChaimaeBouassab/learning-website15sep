@@ -53,6 +53,12 @@ const Header = () => {
       grammarSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const handleFamousBooksLinkClick = () => {
+    const booksSection = document.getElementById('books');
+    if (booksSection) {
+      booksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
    const handleBooksLinkClick = () => {
     setShowPdfButton(true); // Show the PDF download button
   };
@@ -88,18 +94,25 @@ const Header = () => {
             <li><a href="/quizzes">Quizzes</a></li>
             <li><a href="/Vocabulary">Vocabulary</a></li>
 
-            <li><a href="/books">Famous Books</a></li>
+            <li><a href="/books" onClick={handleFamousBooksLinkClick}>Famous Books</a></li>
             <div>
-      <h1>Articles</h1>
-      <ul>
-        {articles.map((article, index) => (
-          <li key={index}>
-            <a href="#" onClick={(e) => handleArticleLinkClick(e, article.link)}>
-              {article.title}
-            </a>
-          </li>
-        ))}
-      </ul>
+<h1>Articles</h1>
+<ul>
+  {articles.map((article, index) => (
+    <li key={index}>
+      <button
+        onClick={(e) => {
+          handleArticleLinkClick(e, article.link);
+          window.open(article.link, '_blank');
+        }}
+      >
+        {article.title}
+      </button>
+    </li>
+  ))}
+</ul>
+
+
     </div>
             <li> <a href="/grammar" onClick={toggleLevelsMenu}>
                 Exercises 
