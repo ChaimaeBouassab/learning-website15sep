@@ -77,7 +77,6 @@ const GrammarSection = () => {
       <h3>Lesson 2: Should Have + Past Participle </h3>
       <img src="/modals.jpeg" alt="" />
       
-      <p>Votre contenu de leçon ici...</p>
 
     </div>
   );

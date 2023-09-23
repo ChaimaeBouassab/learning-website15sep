@@ -3,6 +3,7 @@ import './Header.css'; // Import the CSS file
 import ReactDOM from 'react-dom';
 import YourComponent from './YourComponent'; // Adjust the path to match your file structure
 import GrammarSection from './GrammarSection'; // Import the GrammarSection component
+import FamousBooksSection from './FamousBooksSection';
 const articles = [
   {
     title: 'Article 1',
@@ -22,6 +23,8 @@ const Header = () => {
   const [showPdfButton, setShowPdfButton] = useState(false);
 
   const [showLevelsMenu, setShowLevelsMenu] = useState(false); // Add state for levels menu
+  const [showArticles, setShowArticles] = useState(false); // Add state for levels menu
+
 
   function handleArticleLinkClick(event, link) {
     event.preventDefault();
@@ -69,6 +72,11 @@ const Header = () => {
     setShowLevelsMenu(!showLevelsMenu);
   };
 
+  const toggleArticleMenu = (e) => {
+    e.preventDefault(); // Prevent the default navigation behavior
+    setShowArticles(!showArticles);
+  };
+
   return (
     <div className="header">
       <img src="/srfghiwarbgsn.png" alt="Logo" className="logo" style={{ maxWidth: `${logoWidth}px` }} />
@@ -89,28 +97,21 @@ const Header = () => {
               
             </li>
             <li><a href="/courses">Courses</a></li>
-            <li><a href="/articles">Articles</a></li>
+            <li><a onClick={toggleArticleMenu}>Articles</a></li>
+            {showArticles && (
+                                <ul className="sub-menu">
+                  <li><a href={articles[0].link} target='__blank'>Article 1</a></li>
+                  <br></br>
+                  <li><a href={articles[1].link} target='__blank'>Article 2</a></li>
+                </ul>
+              )}
             <li><a href="#grammar" onClick={handleGrammarLinkClick}>Grammar</a></li>
             <li><a href="/quizzes">Quizzes</a></li>
             <li><a href="/Vocabulary">Vocabulary</a></li>
 
             <li><a href="/books" onClick={handleFamousBooksLinkClick}>Famous Books</a></li>
             <div>
-<h1>Articles</h1>
-<ul>
-  {articles.map((article, index) => (
-    <li key={index}>
-      <button
-        onClick={(e) => {
-          handleArticleLinkClick(e, article.link);
-          window.open(article.link, '_blank');
-        }}
-      >
-        {article.title}
-      </button>
-    </li>
-  ))}
-</ul>
+
 
 
     </div>
@@ -135,6 +136,8 @@ const Header = () => {
         <GrammarSection />
       </div>
       <div id="books" className="books-container">
+      <FamousBooksSection/>
+      </div>
       <ul>
       <li>
         <button
@@ -193,9 +196,7 @@ const Header = () => {
       {/* Add more book entries as needed */}
     </ul>        
       </div>
-      
-    </div>
-    
+          
     
  
     );
