@@ -79,7 +79,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <img src="/srfghiwarbgsn.png" alt="Logo" className="logo" style={{ maxWidth: `${logoWidth}px` }} />
+      <img src="/zzzzzzzz.png" alt="Logo" className="logo" style={{ maxWidth: `${logoWidth}px` }} />
       <div className="menu-container">
         <nav>
           <ul className="menu">
