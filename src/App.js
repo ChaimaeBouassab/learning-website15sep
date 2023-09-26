@@ -140,29 +140,11 @@ const Header = () => {
       </div>
       <ul>
       <li>
-        <button
-  onClick={() => window.open("/kugtjyfhtg.pdf", "_blank")}
-  style={{
-    backgroundColor: "green",
-    color: "white",
-    padding: "10px 20px",
-    border: "none",
-    cursor: "pointer",
-  }}
-
->
-  Download PDF
-  
-</button>
-
- 
-
       </li>
       {/* Add more book entries as needed */}
     </ul>        
       </div>
           
-    
  
     );
 
