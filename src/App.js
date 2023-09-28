@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import YourComponent from './YourComponent'; // Adjust the path to match your file structure
 import GrammarSection from './GrammarSection'; // Import the GrammarSection component
 import FamousBooksSection from './FamousBooksSection';
+import Vocabulary from './Vocabulary' ;
+
 const articles = [
   {
     title: 'Article 1',
@@ -25,6 +27,16 @@ const articles = [
 ];
 
 ReactDOM.render(<YourComponent articles={articles} />, document.getElementById('root'));
+
+const exercises = [
+  {
+    title: 'Exercise 1',
+    link: 'https://www.myenglishpages.com/english/grammar-exercise-phrasal-verbs.php',
+  },
+  
+  // Add more exercises as needed
+];
+
 
 const Header = () => {
   const [logoWidth, setLogoWidth] = useState(0);
@@ -48,19 +60,15 @@ const Header = () => {
       setLogoWidth(maxWidth);
     };
 
-    // Listen for window resize events
     window.addEventListener('resize', handleResize);
 
-    // Call handleResize once when the page loads
     handleResize();
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  // Inside your Header component
   const handleGrammarLinkClick = () => {
     const grammarSection = document.getElementById('grammar');
     if (grammarSection) {
@@ -76,6 +84,15 @@ const Header = () => {
    const handleBooksLinkClick = () => {
     setShowPdfButton(true); // Show the PDF download button
   };
+  const handleVocaLinkClick = () => {
+    const vocabularySection = document.getElementById('Vocabulary');
+    if (vocabularySection) {
+      vocabularySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+   const handleVocLinkClick = () => {
+    setShowPdfButton(true); // Show the PDF download button
+  };
 
   // Function to toggle the display of levels menu
   const toggleLevelsMenu = (e) => {
@@ -87,8 +104,16 @@ const Header = () => {
     e.preventDefault(); // Prevent the default navigation behavior
     setShowArticles(!showArticles);
   };
+  const [showExercises, setShowExercises] = useState(false);
 
+  const toggleExerciseMenu = (e) => {
+    e.preventDefault(); // Prevent the default navigation behavior
+    setShowExercises(!showExercises);
+  };
+  
+ 
   return (
+    
     <div className="header" >
       <img src="/jjjjjjj.png" alt="Logo1" className="logo" style={{ maxWidth: `${logoWidth}px` }} />
 
@@ -111,6 +136,7 @@ const Header = () => {
               )}
               
             </li>
+            
             <li><a onClick={toggleArticleMenu}>Articles</a></li>
             {showArticles && (
                                 <ul className="sub-menu">
@@ -125,7 +151,7 @@ const Header = () => {
                 </ul>
               )}
             <li><a href="#grammar" onClick={handleGrammarLinkClick}>Grammar</a></li>
-            <li><a href="/Vocabulary">Vocabulary</a></li>
+            <li><a href="Vocabulary" onClick={handleVocaLinkClick}>Vocabulary</a></li>
 
             <li><a href="#books" onClick={handleFamousBooksLinkClick}>Famous Books</a></li>
             <div>
@@ -133,9 +159,21 @@ const Header = () => {
 
 
     </div>
-            <li> <a href="/grammar" onClick={toggleLevelsMenu}>
-                Exercises 
-              </a></li>
+    <li>
+    <a href="/grammar" onClick={toggleLevelsMenu}>
+      Exercises 
+    </a>
+  </li>
+  <li><a onClick={toggleLevelsMenu}>Exercises</a></li>
+
+  {showExercises && (
+    <ul className="sub-menu">
+      <li>
+        <a href={exercises[0].link} target='__blank'>A1-A2</a>
+      </li>
+    </ul>
+  )}
+              
           </ul>
         </nav>
       </div>
@@ -143,6 +181,9 @@ const Header = () => {
         <div className="side-image-container">
           <img src="/Design (1).png" alt="" className="side-image" />
         </div>
+        <div id="vocabulary" className="vocabulary-container">
+  <Vocabulary />
+</div>
         <img src="/far7anaanahaha.png" alt="" className="big-image" />
       </div>
       <div className="side-image-container">
@@ -162,6 +203,7 @@ const Header = () => {
       {/* Add more book entries as needed */}
     </ul>        
       </div>
+      
           
  
     );
