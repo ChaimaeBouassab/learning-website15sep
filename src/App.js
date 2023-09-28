@@ -13,6 +13,14 @@ const articles = [
     title: 'Article 2',
     link: 'https://stevepavlina.com/blog/2004/10/the-courage-to-live-consciously/',
   },
+  {
+    title: 'Article 3',
+    link: 'https://stevepavlina.com/blog/2005/06/self-discipline-willpower/',
+  },
+  {
+    title: 'Article 4',
+    link: 'https://www.boozallen.com/s/insight/publication/role-of-artificial-intelligence-in-cyber-security.html',
+  },
   // Add more articles as needed
 ];
 
@@ -29,6 +37,9 @@ const Header = () => {
   function handleArticleLinkClick(event, link) {
     event.preventDefault();
     window.location.href = link;
+  }
+  function Apply() {
+  const backgroundColor = 'blue'; // Change this to your desired background color
   }
   
   useEffect(() => {
@@ -78,8 +89,12 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div className="header" >
+      <img src="/jjjjjjj.png" alt="Logo1" className="logo" style={{ maxWidth: `${logoWidth}px` }} />
+
       <img src="/zzzzzzzz.png" alt="Logo" className="logo" style={{ maxWidth: `${logoWidth}px` }} />
+      
+
       <div className="menu-container">
         <nav>
           <ul className="menu">
@@ -96,17 +111,20 @@ const Header = () => {
               )}
               
             </li>
-            <li><a href="/courses">Courses</a></li>
             <li><a onClick={toggleArticleMenu}>Articles</a></li>
             {showArticles && (
                                 <ul className="sub-menu">
                   <li><a href={articles[0].link} target='__blank'>Article 1</a></li>
                   <br></br>
                   <li><a href={articles[1].link} target='__blank'>Article 2</a></li>
+                  <br></br>
+                  <li><a href={articles[2].link} target='__blank'>Article 3</a></li>
+                  <br></br>
+                  <li><a href={articles[3].link} target='__blank'>Article 4</a></li>
+               
                 </ul>
               )}
             <li><a href="#grammar" onClick={handleGrammarLinkClick}>Grammar</a></li>
-            <li><a href="/quizzes">Quizzes</a></li>
             <li><a href="/Vocabulary">Vocabulary</a></li>
 
             <li><a href="#books" onClick={handleFamousBooksLinkClick}>Famous Books</a></li>

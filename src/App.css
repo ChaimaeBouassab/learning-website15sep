@@ -88,3 +88,20 @@
 }
 
 
+/* In your CSS file (e.g., App.css) */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+}
+
+/* styles.css */
+.background {
+  background-color: blue; /* Change this to your desired background color */
+}
+
+
+.image {
+  width: 100px; /* Set the width of your image */
+  height: auto; /* Automatically adjust the height */
+}
