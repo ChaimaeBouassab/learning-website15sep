@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import './FamousBooksSection.css'; 
+import './FamousBooksSection.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BookList from './BookList';
+
 function FamousBooksSection() {
 
 return (
     <div id="books" className="books-container">
     <ul>
     <li>
-    
+    <div className="App">
+      <h1>Book List</h1>
+      <BookList />
+    </div>
 <h1>𝗦𝘁𝗮𝗿𝘁 𝗪𝗵𝗲𝗿𝗲 𝗬𝗼𝘂 𝗔𝗿𝗲: 𝗔 𝗚𝘂𝗶𝗱𝗲 𝘁𝗼 𝗖𝗼𝗺𝗽𝗮𝘀𝘀𝗶𝗼𝗻𝗮𝘁𝗲 𝗟𝗶𝘃𝗶𝗻𝗴 (𝗦𝗵𝗮𝗺𝗯𝗵𝗮𝗹𝗮 𝗖𝗹𝗮𝘀𝘀𝗶𝗰𝘀)</h1>
       <p>𝙀𝙫𝙚𝙧𝙮𝙗𝙤𝙙𝙮 𝙠𝙣𝙤𝙬𝙨 𝙩𝙝𝙖𝙩 𝙝𝙖𝙧𝙙 𝙬𝙤𝙧𝙠, 𝙡𝙪𝙘𝙠 𝙖𝙣𝙙 𝙩𝙖𝙡𝙚𝙣𝙩 𝙚𝙖𝙘𝙝 𝙥𝙡𝙖𝙮𝙨 𝙖 𝙧𝙤𝙡𝙚 𝙞𝙣 𝙤𝙪𝙧 𝙬𝙤𝙧𝙠𝙞𝙣𝙜 𝙡𝙞𝙫𝙚𝙨. 𝙄𝙣 𝙝𝙞𝙨 𝙡𝙖𝙣𝙙𝙢𝙖𝙧𝙠 𝙗𝙤𝙤𝙠, 𝘼𝙙𝙖𝙢 𝙂𝙧𝙖𝙣𝙩 𝙞𝙡𝙡𝙪𝙢𝙞𝙣𝙖𝙩𝙚𝙨 𝙩𝙝𝙚 𝙞𝙢𝙥𝙤𝙧𝙩𝙖𝙣𝙘𝙚 𝙤𝙛 𝙖 𝙛𝙤𝙪𝙧𝙩𝙝, 𝙞𝙣𝙘𝙧𝙚𝙖𝙨𝙞𝙣𝙜𝙡𝙮 𝙘𝙧𝙞𝙩𝙞𝙘𝙖𝙡 𝙛𝙖𝙘𝙩𝙤𝙧 - 𝙩𝙝𝙖𝙩 𝙩𝙝𝙚 𝙗𝙚𝙨𝙩 𝙬𝙖𝙮 𝙩𝙤 𝙜𝙚𝙩 𝙩𝙤 𝙩𝙝𝙚 𝙩𝙤𝙥 𝙞𝙨 𝙩𝙤 𝙛𝙤𝙘𝙪𝙨 𝙤𝙣 𝙗𝙧𝙞𝙣𝙜𝙞𝙣𝙜 𝙤𝙩𝙝𝙚𝙧𝙨 𝙬𝙞𝙩𝙝 𝙮𝙤𝙪.
 

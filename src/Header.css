@@ -39,12 +39,12 @@
     color: white;
     font-weight: bold;
     padding: 5px 10px;
-    background-color: #007acc; /* Couleur d'arrière-plan de votre bouton */
+    background-color:#0092ca; /* Couleur d'arrière-plan de votre bouton */
     border-radius: 5px; /* Coins arrondis */
   }
   
   .menu li a:hover {
-    background-color: #005a9c; /* Changez la couleur au survol */
+    background-color:#0092ca; /* Changez la couleur au survol */
   }
   
   /* ... Autres styles ... */

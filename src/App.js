@@ -5,11 +5,11 @@ import YourComponent from './YourComponent'; // Adjust the path to match your fi
 import GrammarSection from './GrammarSection'; // Import the GrammarSection component
 import FamousBooksSection from './FamousBooksSection';
 import Vocabulary from './Vocabulary' ;
-import Appl from './Appl' ;
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BookList from './BookList';
 
 const appStyle = {
-  backgroundColor: ' #5DADE2 ' , // Replace with your desired background color or image
+  backgroundColor: ' #c7b198 ' , // Replace with your desired background color or image
   /* You can also set other background properties here, like background-image */
 };
 const articles = [
@@ -119,8 +119,9 @@ const Header = () => {
   
  
   return (
+
     <div style={appStyle}>
-    
+  
     <div className="header" >
       <img src="/jjjjjjj.png" alt="Logo1" className="logo" style={{ maxWidth: `${logoWidth}px` }} />
 
@@ -173,9 +174,7 @@ const Header = () => {
 
   </li>
   <br></br>
-  <div id="vocabulary" className="vocabulary-container">
-  <Appl />
-
+ 
   {showExercises && (
     <ul className="sub-menu">
       <li>
@@ -194,6 +193,7 @@ const Header = () => {
         <div id="vocabulary" className="vocabulary-container">
   <Vocabulary />
   <br></br>
+  
   <button
 onClick={() => window.open("/Phrasal verbs.pdf", "_blank")}
 style={{
