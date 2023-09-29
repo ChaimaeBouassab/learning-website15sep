@@ -81,3 +81,14 @@
 .side-image-container {
   margin: 30px; /* Ajouter une marge autour des images latérales */
 }
+
+/* src/styles.css */
+body {
+  background-color:  "#5DADE2 "; /* Your background color here */
+}
+
+/* styles.css */
+.background {
+  background-color: blue; /* Change this to your desired background color */
+}
+

@@ -53,6 +53,12 @@
   margin-right: 20px; /* Adjust the spacing between menu items */
 }
 
+/* styles.css */
+body {
+  background-color: #5DADE2 ; /* Replace with your desired background color or image */
+  /* You can also set other background properties here, like background-image */
+}
+
 .menu a {
   text-decoration: none;
   color: #333; /* Adjust the text color */
@@ -95,10 +101,6 @@
   align-items: flex-start; /* Align items to the left */
 }
 
-/* styles.css */
-.background {
-  background-color: blue; /* Change this to your desired background color */
-}
 
 
 .image {

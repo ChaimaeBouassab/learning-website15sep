@@ -6,6 +6,11 @@ import GrammarSection from './GrammarSection'; // Import the GrammarSection comp
 import FamousBooksSection from './FamousBooksSection';
 import Vocabulary from './Vocabulary' ;
 
+
+const appStyle = {
+  backgroundColor: ' #5DADE2 ' , // Replace with your desired background color or image
+  /* You can also set other background properties here, like background-image */
+};
 const articles = [
   {
     title: 'Article 1',
@@ -113,6 +118,7 @@ const Header = () => {
   
  
   return (
+    <div style={appStyle}>
     
     <div className="header" >
       <img src="/jjjjjjj.png" alt="Logo1" className="logo" style={{ maxWidth: `${logoWidth}px` }} />
@@ -136,7 +142,7 @@ const Header = () => {
               )}
               
             </li>
-            
+            <br></br>
             <li><a onClick={toggleArticleMenu}>Articles</a></li>
             {showArticles && (
                                 <ul className="sub-menu">
@@ -163,8 +169,9 @@ const Header = () => {
     <a href="/grammar" onClick={toggleLevelsMenu}>
       Exercises 
     </a>
+
   </li>
-  <li><a onClick={toggleLevelsMenu}>Exercises</a></li>
+  <br></br>
 
   {showExercises && (
     <ul className="sub-menu">
@@ -183,6 +190,51 @@ const Header = () => {
         </div>
         <div id="vocabulary" className="vocabulary-container">
   <Vocabulary />
+  <br></br>
+  <button
+onClick={() => window.open("/Phrasal verbs.pdf", "_blank")}
+style={{
+  backgroundColor:  "#5DADE2 ",
+  color: "white",
+  padding: "10px 20px",
+  border: "none",
+  cursor: "pointer",
+}}
+
+>
+Download PDF 1
+
+</button>
+<br></br>
+<button
+onClick={() => window.open("/phrasal-verbs-exercise-1.pdf", "_blank")}
+style={{
+  backgroundColor: "#BB8FCE",
+  color: "white",
+  padding: "10px 20px",
+  border: "none",
+  cursor: "pointer",
+}}
+
+>
+Download PDF 2
+
+</button>
+<br></br>
+<button
+onClick={() => window.open("/ph008.pdf", "_blank")}
+style={{
+  backgroundColor: "#5DADE2 ",
+  color: "white",
+  padding: "10px 20px",
+  border: "none",
+  cursor: "pointer",
+}}
+
+>
+Download PDF 3
+
+</button>
 </div>
         <img src="/far7anaanahaha.png" alt="" className="big-image" />
       </div>
@@ -205,7 +257,8 @@ const Header = () => {
       </div>
       
           
- 
+      </div>
+
     );
 
 };
