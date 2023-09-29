@@ -5,6 +5,7 @@ import YourComponent from './YourComponent'; // Adjust the path to match your fi
 import GrammarSection from './GrammarSection'; // Import the GrammarSection component
 import FamousBooksSection from './FamousBooksSection';
 import Vocabulary from './Vocabulary' ;
+import Appl from './Appl' ;
 
 
 const appStyle = {
@@ -172,6 +173,8 @@ const Header = () => {
 
   </li>
   <br></br>
+  <div id="vocabulary" className="vocabulary-container">
+  <Appl />
 
   {showExercises && (
     <ul className="sub-menu">
